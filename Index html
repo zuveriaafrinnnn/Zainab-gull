@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Zainab Akka 💌</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fffaf6;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+    .card-container {
+      perspective: 1000px;
+    }
+    .card {
+      width: 300px;
+      height: 400px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+      cursor: pointer;
+    }
+    .card.flipped {
+      transform: rotateY(180deg);
+    }
+    .side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .front {
+      background: linear-gradient(135deg, #ffd6e0, #f3e5f5);
+      color: #4a2c4c;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.4em;
+      padding: 20px;
+    }
+    .back {
+      background: #ffffff;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .back .pun {
+      font-size: 1.2em;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .back .bold {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #8e24aa;
+      margin: 10px 0;
+    }
+    .back .signature {
+      font-size: 0.95em;
+      color: #333;
+      margin-top: auto;
+    }
+    img.card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="side front">
+        <div>To Zainab akka,</div>
+        <div>with love & duas 💖</div>
+      </div>
+      <div class="side back">
+        <div class="pun">“You pea‑lieve in yourself? 🌱”</div>
+        <div class="bold">Aap se ho jayega</div>
+        <div class="bold">YOU GOT THIS</div>
+        <div class="signature">No distance can separate us.<br>Yours, Zozo</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Optional: tap anywhere on mobile to flip
+    document.body.addEventListener('click', function (e) {
+      if (!e.target.closest('.card')) {
+        document.querySelector('.card').classList.toggle('flipped');
+      }
+    });
+  </script>
+</body>
+</html>
